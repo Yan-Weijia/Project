@@ -1,9 +1,9 @@
 ---
 title: 'Statistical analysis of factors that affect the answer of general questions in spoken Chinese'
 output:
-  word_document: default
-  html_document: default
   pdf_document: default
+  html_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -29,7 +29,7 @@ So the hypotheses are:
 - Hypothesis 2: Extrovert prefers detailed answer than introvert.
 - Hypothesis 3: People are more inclined to give positive answer in detail, compared to negative answer.
 
-# Data Collection
+## Data Collection
 
   In order to restore the spoken language application environment to a greater extent, I apply face-to-face or telephone interview to collect the data.
 
@@ -167,7 +167,7 @@ H1_OddsRatio
 H1_plot <- df_num %>% 
   group_by(gender_bin, sim_det_bin) %>% 
   summarise(answer_count = n())
-H1_plot
+# H1_plot
 ```
 
 ```{r}
@@ -211,7 +211,7 @@ H2_OddsRatio
 H2_plot <- df_num %>% 
   group_by(pers_bin, sim_det_bin) %>% 
   summarise(answer_count = n())
-H2_plot
+# H2_plot
 ```
 
 ```{r}
@@ -228,9 +228,9 @@ The Odds Ratio = 6.20, which means introvert who choses simple answer and extrov
 
 Hypothesis 2 is correct.
 
-### H3
+### Hypotysis 3
 
-H3: People are more inclined to give positive answer in detail, compared to negative answer.
+People are more inclined to give positive answer in detail, compared to negative answer.
 
 ```{r}
 H3_table <- table(positiveness = df_num$pos_neg_bin, simple_detailed = df_num$sim_det_bin)
@@ -254,7 +254,7 @@ H3_OddsRatio
 H3_plot <- df_num %>% 
   group_by(pos_neg_bin, sim_det_bin) %>% 
   summarise(answer_count = n())
-H3_plot
+# H3_plot
 ```
 
 ```{r}
